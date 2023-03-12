@@ -12,7 +12,7 @@ clean1:
 	rm -rf ./dist/latex 
 prep:
 	mkdir dist
-compile: main.bin
+compile: main.bin 
 
 main.bin: src/main.c
 	$(CC) $(C_OPTS) $< -o ./dist/$@
@@ -29,10 +29,10 @@ Doxygen:
 	
 all1: clean1 Doxygen
 
-compile_2: clean prep test.bin
+compile_2: test.bin
 
-test.bin:src/main.c
-	 $(CC) $(C_OPTS) $< -fprofile-instr-generate -fcoverage-mapping  -o ./dist/$@ -lcheck -lsubunit
+test.bin:  test/test.c
+	 $(CC) $(C_OPTS) $< -fprofile-instr-generate -fcoverage-mapping  -o ./dist/$@ -lcheck 
 test: prep compile_2
 		LLVM_PROFILE_FILE="dist/test.profraw" ./dist/test.bin
 		llvm-profdata merge -sparse dist/test.profraw -o dist/test.profdata
