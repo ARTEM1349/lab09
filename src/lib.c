@@ -2,15 +2,14 @@
 
 int lab05(a)
 {
-     int i,n;
-     
-     for (a = n; a>0 ; a--) 
-     {
-     printf ("%d-",a);   
-       i= i*a*10;
-       printf ("%d\n",i);
+     int i =200;
+     int n =1;
+     int x;
+     for (a = n; a<10 ; a++) 
+     {   
+       x= i*(1+n*a);
+       printf ("%d\x",i);
    } 
-   printf ("\n");
     return 0;
 }
 
