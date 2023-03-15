@@ -1,29 +1,27 @@
 #include <stdio.h>
 
-int lab05(a)
+int lab05(int a)
 {
      int i =200;
      int n =1;
      int x;
-     for (a = n; a<10 ; a++) 
-     {   
+     for (a = n; a<10 ; a++)
+     {  
        x= i*(1+n*a);
-       printf ("%d\x",i);
-   } 
-    return 0;
+   }
+    return x;
 }
 
 
 
 
 
-int lab06(long int b[], int s) 
-{
-    
+int lab06(long int b[], int s, int a){
+   
     long int i,j,c;
-    for ( i = 0; i<s - 1;i++)
+    for ( i = 0; i<s;i++)
      {
-        for ( j  =0;j<s-i-1;j++)
+        for ( j  =0;j<s-i;j++)
          {
             if (b[j] > b[j+1])
             {
@@ -33,11 +31,7 @@ int lab06(long int b[], int s)
             }
        }
        
-    } 
-    for(i = 0; i < s; i++)
-        printf ("%ld\n",b[i]);
-        
-    return 0;
+    }
+    c = b[a];
+    return c;
 }
-
-
